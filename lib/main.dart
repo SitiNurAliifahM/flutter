@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:projek/listview/list_example.dart';
+import 'package:projek/arsitektur_bangunan/bangunan_screen.dart';
+import 'package:projek/arsitektur_bangunan/profile_screen.dart';
+import 'package:projek/arsitektur_bangunan/about_acreen.dart';
+import 'package:projek/arsitektur_bangunan/home_screen.dart';
+import 'package:projek/arsitektur_bangunan/bangunan_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,13 +16,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: {
+        "/home": (context) => HomeScreen(),
+        '/about': (context) => AboutScreen(),
+        '/bangunan': (context) => BangunanScreen(),
+        '/profile': (context) => Profile()
+      },
+      initialRoute: "home",
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Belajar Flutter'),
-          centerTitle: true,
-          backgroundColor: Colors.blue,
-        ),
-        body: ListExample(),
+        body: HomeScreen(),
       ),
     );
   }
